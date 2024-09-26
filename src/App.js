@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import './styles.css'
 
 function Skills(params) {
@@ -18,16 +18,25 @@ function Avatar(props) {
     'Поиск фисташек',
     ' отькрытие фисташек',
     ' закрытие фисташек',
-  ])
+  ]);
 
-  const [tempskills, setTempSkills] = useState(skills.join(' ,'))
+  const [tempskills, setTempSkills] = useState(skills.join(' ,'));
 
   const [person, setPerson] = useState({
     name: 'Евгений',
     surname: 'Салоников',
     group: 'CS-302(c)',
     about: 'Люблю искать фисташки и открывать их',
-  })
+  });
+
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (inputRef.current)
+    {
+      inputRef.current.focus();
+    }
+  }, [person, skills, tempskills])
 
   const handleInputChange = (e) => {
     setTempSkills(e.target.value) // Обновляем значение input
@@ -65,12 +74,14 @@ function Avatar(props) {
 	    <div>
       <h3 className="headname">
           <input
+            ref={inputRef}
             type="text"
             name="name"
             value={person.name}
             onChange={handleChange}
           />
           <input
+            ref={inputRef}
             type="text"
             name="surname"
             value={person.surname}
@@ -85,6 +96,7 @@ function Avatar(props) {
         <li>
           <strong>Группа</strong>:{' '}
             <input
+              ref={inputRef}
               type="text"
               name="group"
               value={person.group}
@@ -96,6 +108,7 @@ function Avatar(props) {
         <li>
           <strong>О себе</strong>:{' '}
             <input
+              ref={inputRef}
               type="text"
               name="about"
               value={person.about}
