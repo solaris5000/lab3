@@ -59,29 +59,22 @@ function Avatar(props) {
     }
   }
 
-  return (
-    <div className="container">
+  function EditForm()
+  {
+    return (<div className="container">
       <h3 className="headname">
-        {edit ? (
           <input
             type="text"
             name="name"
             value={person.name}
             onChange={handleChange}
           />
-        ) : (
-          person.name + ' '
-        )}
-        {edit ? (
           <input
             type="text"
             name="surname"
             value={person.surname}
             onChange={handleChange}
           />
-        ) : (
-          person.surname
-        )}
       </h3>
       <img
         className="imga"
@@ -90,40 +83,64 @@ function Avatar(props) {
       <div>
         <li>
           <strong>Группа</strong>:{' '}
-          {edit ? (
             <input
               type="text"
               name="group"
               value={person.group}
               onChange={handleChange}
             />
-          ) : (
-            person.group
-          )}
         </li>
         <strong>Навыки</strong>:
-        {edit ? (
           <input type="text" value={tempskills} onChange={handleInputChange} />
-        ) : (
-          skills.join(', ')
-        )}
         <li>
           <strong>О себе</strong>:{' '}
-          {edit ? (
             <input
               type="text"
               name="about"
               value={person.about}
               onChange={handleChange}
             />
-          ) : (
-            person.about
-          )}
         </li>
       </div>
       <button name="state" onClick={switchEdit}>
         {edit ? 'Сохраниить?' : 'Редактировать'}
       </button>
+    </div>)
+  }
+
+  function ViewForm()
+  {
+    return (
+    <div className="container">
+      <h3 className="headname">
+
+          person.name  person.surname
+      </h3>
+      <img
+        className="imga"
+        src="https://upload.wikimedia.org/wikipedia/en/d/d2/Rexy-_the_Jurassic_Park_Tyrannosaurus_rex.png"
+      />
+      <div>
+        <li>
+          <strong>Группа</strong>:
+            person.group
+        </li>
+        <strong>Навыки</strong>:
+          skills.join(', ')
+        <li>
+          <strong>О себе</strong>:
+            person.about
+        </li>
+      </div>
+      <button name="state" onClick={switchEdit}>
+        {edit ? 'Сохраниить?' : 'Редактировать'}
+      </button>
+    </div>)
+  }
+
+  return (
+    <div className="container">
+      {edit ? <EditForm/> : <ViewForm/>}
     </div>
   )
 }
