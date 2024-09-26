@@ -61,7 +61,8 @@ function Avatar(props) {
 
   function EditForm()
   {
-    return (<div className="container">
+    return (
+	    <div>
       <h3 className="headname">
           <input
             type="text"
@@ -105,16 +106,17 @@ function Avatar(props) {
       <button name="state" onClick={switchEdit}>
         {edit ? 'Сохраниить?' : 'Редактировать'}
       </button>
-    </div>)
+	    </div>
+    )
   }
 
   function ViewForm()
   {
     return (
-    <div className="container">
+	    <div>
       <h3 className="headname">
 
-          person.name  person.surname
+	    {person.name}  {person.surname}
       </h3>
       <img
         className="imga"
@@ -123,19 +125,20 @@ function Avatar(props) {
       <div>
         <li>
           <strong>Группа</strong>:
-            person.group
+	    {person.group}
         </li>
         <strong>Навыки</strong>:
-          skills.join(', ')
+	    {skills.join(', ')}
         <li>
           <strong>О себе</strong>:
-            person.about
+	    {person.about}
         </li>
       </div>
       <button name="state" onClick={switchEdit}>
         {edit ? 'Сохраниить?' : 'Редактировать'}
       </button>
-    </div>)
+	    </div>
+    )
   }
 
   return (
