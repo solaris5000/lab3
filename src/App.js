@@ -29,14 +29,46 @@ function Avatar(props) {
     about: 'Люблю искать фисташки и открывать их',
   });
 
-  const inputRef = useRef(null);
+  const nameRef = useRef(null);
+  const surnameRef = useRef(null);
+  const groupRef = useRef(null);
+  const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
 
   useEffect(() => {
-    if (inputRef.current)
+    if (nameRef.current)
     {
-      inputRef.current.focus();
+      nameRef.current.focus();
     }
-  }, [person, skills, tempskills])
+  }, [person.name])
+
+  useEffect(() => {
+    if (surnameRef.current)
+    {
+      surnameRef.current.focus();
+    }
+  }, [person.surname])
+
+  useEffect(() => {
+    if (groupRef.current)
+    {
+      groupRef.current.focus();
+    }
+  }, [person.group])
+
+  useEffect(() => {
+    if (aboutRef.current)
+    {
+      aboutRef.current.focus();
+    }
+  }, [person.about])
+
+  useEffect(() => {
+    if (skillsRef.current)
+    {
+      skillsRef.current.focus();
+    }
+  }, [tempskills])
 
   const handleInputChange = (e) => {
     setTempSkills(e.target.value) // Обновляем значение input
@@ -74,14 +106,14 @@ function Avatar(props) {
 	    <div>
       <h3 className="headname">
           <input
-            ref={inputRef}
+            ref={nameRef}
             type="text"
             name="name"
             value={person.name}
             onChange={handleChange}
           />
           <input
-            ref={inputRef}
+            ref={surnameRef}
             type="text"
             name="surname"
             value={person.surname}
@@ -96,7 +128,7 @@ function Avatar(props) {
         <li>
           <strong>Группа</strong>:{' '}
             <input
-              ref={inputRef}
+              ref={groupRef}
               type="text"
               name="group"
               value={person.group}
@@ -104,11 +136,11 @@ function Avatar(props) {
             />
         </li>
         <strong>Навыки</strong>:
-          <input type="text" value={tempskills} onChange={handleInputChange} />
+          <input ref={skillsRef} type="text" value={tempskills} onChange={handleInputChange} />
         <li>
           <strong>О себе</strong>:{' '}
             <input
-              ref={inputRef}
+              ref={aboutRef}
               type="text"
               name="about"
               value={person.about}
