@@ -230,20 +230,21 @@ function Avatar(props) {
   function NavigationBar()
   {
     return(
-    <div><a
+    <div>
+      <button
       type="text"
       value="main"
-      onClick={switchPage}>Главная</a>
-      <a
+      onClick={switchPage}>Главная</button>
+      <button
       type="text"
       value="about"
       onClick={switchPage}>
-        О себе</a>
-        <a type="text"
+        О себе</button>
+        <button type="text"
               value="contacts"
               onClick={switchPage}>
                 Контакты
-              </a>
+              </button>
               </div>);
   }
 
