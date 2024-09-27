@@ -585,7 +585,7 @@ video {
   width: 100px;
 }
 
-.header{
+.linker{
   width: 100%;
   display: flex;
   justify-content: space-between; /* Распределяет элементы по всей ширине */

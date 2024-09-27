@@ -243,16 +243,18 @@ function Avatar(props) {
       value="main"
       onClick={switchPage}>Главная</button>
       <button
+      className="linkbtn"
       type="text"
       value="about"
       onClick={switchPage}>
-        О себе</button>
-        <button type="text"
-              value="contacts"
-              onClick={switchPage}>
-                Контакты
-              </button>
-              </div>);
+      О себе</button>
+      <button 
+      className="linkbtn"type="text"
+      value="contacts"
+      onClick={switchPage}>
+        Контакты
+      </button>
+      </div>);
   }
 
   return (
