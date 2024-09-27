@@ -580,3 +580,7 @@ video {
   border-radius: 50%;
   background-color: cadetblue;
 }
+
+.ytLink {
+  width: 100px;
+}
