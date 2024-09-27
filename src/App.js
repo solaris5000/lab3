@@ -14,6 +14,8 @@ function Avatar(props) {
 
   const [edit, setEdit] = useState(false)
 
+  const [darkmode, setDarkmode] = useState(false)
+
   const [skills, setSkils] = useState([
     'Поиск фисташек',
     ' отькрытие фисташек',
@@ -111,6 +113,10 @@ function Avatar(props) {
     if (edit) {
       updateArray()
     }
+  }
+
+  const switchTheme = () => {
+    setDarkmode(!darkmode)
   }
 
   function EditForm()
@@ -249,7 +255,8 @@ function Avatar(props) {
   }
 
   return (
-    <div className="pageRoot">
+    <html className={darkmode ? 'dark' : ''}>
+    <div class="bg-white dark:bg-black">
     <div className="header">
       {NavigationBar()}
             </div>
@@ -259,7 +266,9 @@ function Avatar(props) {
     <div className="footer">
     {NavigationBar()}
     </div>
+    <button onClick={switchTheme}>Переключить тему</button>
     </div>
+    </html>
   )
 }
 
