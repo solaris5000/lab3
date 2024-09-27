@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react'
-import './styles.css'
+import './tailstyles.css'
 
 function Skills(params) {
   return (
@@ -21,6 +21,8 @@ function Avatar(props) {
   ]);
 
   const [tempskills, setTempSkills] = useState(skills.join(' ,'));
+
+  const [currpage, setCurrpage] = useState('main');
 
   const [person, setPerson] = useState({
     name: 'Евгений',
@@ -186,9 +188,22 @@ function Avatar(props) {
     )
   }
 
+  function renderSwitch(param)
+  {
+    switch(param)
+    {
+      case 'main': return (edit ? <EditForm/> : <ViewForm/>);
+      case 'about': return ("about");
+      case 'contacts': return("contats");
+    }
+  }
+
   return (
+    <div className="pageRoot">
+    <div className="header"></div>
     <div className="container">
-      {edit ? <EditForm/> : <ViewForm/>}
+      {renderSwitch(currpage)}
+    </div>
     </div>
   )
 }
