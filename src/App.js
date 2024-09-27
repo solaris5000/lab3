@@ -260,13 +260,13 @@ function Avatar(props) {
   return (
     <html className={darkmode ? 'dark' : ''}>
     <div class="pageHolder">
-    <div className="header">
+    <div className="linker">
       {NavigationBar()}
             </div>
     <div className="container">
       {renderSwitch(currpage)}
     </div>
-    <div className="footer">
+    <div className="linker">
     {NavigationBar()}
     </div>
     <button onClick={switchTheme}>Переключить тему</button>
