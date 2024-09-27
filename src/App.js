@@ -178,7 +178,7 @@ function Avatar(props) {
       {person.about}
       </div>
       <h2>Навыки:</h2>
-      <div>{person.skills}</div>
+      <div>{skills.join(" ,")}</div>
       <h2>Образование:</h2>
       <div>{person.major}</div>
       </div>
@@ -223,7 +223,7 @@ function Avatar(props) {
     {
       case 'main': return (edit ? <EditForm/> : <ViewForm/>);
       case 'about': return (<Aboutpage/>);
-      case 'contacts': return("contats");
+      case 'contacts': return(<Contacts/>);
     }
   }
 
