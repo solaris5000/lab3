@@ -236,7 +236,7 @@ function Avatar(props) {
   function NavigationBar()
   {
     return(
-    <div className="stopers">
+    <div className="linker">
       <button
       className="linkbtn"
       type="text"
@@ -260,13 +260,13 @@ function Avatar(props) {
   return (
     <html className={darkmode ? 'dark' : ''}>
     <div class="pageHolder">
-    <div className="linker">
+    <div className="stopers">
       {NavigationBar()}
             </div>
     <div className="container">
       {renderSwitch(currpage)}
     </div>
-    <div className="linker">
+    <div className="stopers">
     {NavigationBar()}
     </div>
     <button onClick={switchTheme}>Переключить тему</button>
