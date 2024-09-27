@@ -238,6 +238,7 @@ function Avatar(props) {
     return(
     <div>
       <button
+      className="linkbtn"
       type="text"
       value="main"
       onClick={switchPage}>Главная</button>
@@ -256,7 +257,7 @@ function Avatar(props) {
 
   return (
     <html className={darkmode ? 'dark' : ''}>
-    <div class="bg-white dark:bg-black">
+    <div class="pageHolder">
     <div className="header">
       {NavigationBar()}
             </div>

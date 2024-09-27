@@ -585,8 +585,28 @@ video {
   width: 100px;
 }
 
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Распределяет элементы по всей ширине */
+  padding: 0 5%; /* Отступы по бокам контейнера */
+}
+
+.linkbtn{
+  flex: 1; /* Элементы растягиваются равномерно */
+  margin: 0 2.5%; /* Отступы между элементами */
+  padding: 20px; /* Внутренние отступы */
+  box-sizing: border-box; /* Учитывает отступы в ширине */
+}
+
 .dark {
   background-color: darkblue;
   border-color: #9ca3af;
   color: #9ca3af;
 }
+.pageHolder
+{
+  width: 100%;
+  height: 100%;
+}
+
