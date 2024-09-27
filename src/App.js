@@ -236,7 +236,7 @@ function Avatar(props) {
   function NavigationBar()
   {
     return(
-    <div>
+    <div className="stopers">
       <button
       className="linkbtn"
       type="text"
