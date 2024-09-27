@@ -584,3 +584,9 @@ video {
 .ytLink {
   width: 100px;
 }
+
+.dark {
+  background-color: darkblue;
+  border-color: #9ca3af;
+  color: #9ca3af;
+}
