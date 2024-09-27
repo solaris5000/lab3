@@ -233,15 +233,15 @@ function Avatar(props) {
     <div><a
       type="text"
       value="main"
-      onChange={switchPage}>Главная</a>
+      onClick={switchPage}>Главная</a>
       <a
       type="text"
       value="about"
-      onChange={switchPage}>
+      onClick={switchPage}>
         О себе</a>
         <a type="text"
               value="contacts"
-              onChange={switchPage}>
+              onClick={switchPage}>
                 Контакты
               </a>
               </div>);
